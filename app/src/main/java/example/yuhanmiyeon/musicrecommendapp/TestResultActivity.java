@@ -22,16 +22,16 @@ public class TestResultActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_testresult);
 
-        Button RButton = (Button)findViewById(R.id.Retest);
-        RButton.setOnClickListener(new View.OnClickListener() {
+        Button button1 = (Button)findViewById(R.id.Retest);
+        button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(TestResultActivity.this,TestActivity.class);
                 startActivity(intent);
             }
         });
-        Button SButton = (Button)findViewById(R.id.testStart);
-        SButton.setOnClickListener(new View.OnClickListener() {
+        Button button2 = (Button)findViewById(R.id.testStart);
+        button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(TestResultActivity.this,MainActivity.class);

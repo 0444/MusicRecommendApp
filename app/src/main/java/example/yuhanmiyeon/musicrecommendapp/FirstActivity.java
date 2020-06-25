@@ -15,8 +15,8 @@ public class FirstActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first);
 
-        Button FButton = (Button)findViewById(R.id.firstButton);
-        FButton.setOnClickListener(new View.OnClickListener() {
+        Button button = (Button)findViewById(R.id.firstButton);
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(FirstActivity.this,TestActivity.class);

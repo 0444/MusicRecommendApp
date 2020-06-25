@@ -10,8 +10,20 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class SearchResultActivity extends AppCompatActivity
 {
-    TextView N,S,H1,H2,H3,C,O;
-    String n,s,h1,h2,h3,c,o;
+    TextView N;
+    TextView S;
+    TextView H1;
+    TextView H2;
+    TextView H3;
+    TextView C;
+    TextView O;
+    String nn;
+    String ss;
+     String hh1;
+     String hh2;
+     String hh3;
+     String cc;
+    String oo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -19,8 +31,8 @@ public class SearchResultActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_searchresult);
 
-        Button SButton = (Button)findViewById(R.id.SeachBB);
-        SButton.setOnClickListener(new View.OnClickListener()
+        Button button = (Button)findViewById(R.id.SeachBB);
+        button.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
@@ -30,13 +42,13 @@ public class SearchResultActivity extends AppCompatActivity
             }
         });
 
-        n=((SearchActivity)SearchActivity.context).name;
-        s=((SearchActivity)SearchActivity.context).sing;
-        h1=((SearchActivity)SearchActivity.context).hesh[0];
-        h2=((SearchActivity)SearchActivity.context).hesh[1];
-        h3=((SearchActivity)SearchActivity.context).hesh[2];
-        c=((SearchActivity)SearchActivity.context).country;
-        o=((SearchActivity)SearchActivity.context).ost;
+        nn=((SearchActivity)SearchActivity.context).name;
+        ss=((SearchActivity)SearchActivity.context).sing;
+        hh1=((SearchActivity)SearchActivity.context).hesh[0];
+        hh2=((SearchActivity)SearchActivity.context).hesh[1];
+        hh3=((SearchActivity)SearchActivity.context).hesh[2];
+        cc=((SearchActivity)SearchActivity.context).country1;
+        oo=((SearchActivity)SearchActivity.context).ost1;
 
         N=(TextView)findViewById(R.id.N);
         S=(TextView)findViewById(R.id.S);
@@ -46,12 +58,12 @@ public class SearchResultActivity extends AppCompatActivity
         C=(TextView)findViewById(R.id.C);
         O=(TextView)findViewById(R.id.O);
 
-        N.setText(n);
-        S.setText(s);
-        H1.setText(h1);
-        H2.setText(h2);
-        H3.setText(h3);
-        C.setText(c);
-        O.setText(o);
+        N.setText(nn);
+        S.setText(ss);
+        H1.setText(hh1);
+        H2.setText(hh2);
+        H3.setText(hh3);
+        C.setText(cc);
+        O.setText(oo);
     }
 }

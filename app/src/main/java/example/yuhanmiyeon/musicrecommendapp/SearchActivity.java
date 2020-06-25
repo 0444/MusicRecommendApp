@@ -2,6 +2,7 @@ package example.yuhanmiyeon.musicrecommendapp;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Movie;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,18 +21,37 @@ public class SearchActivity extends AppCompatActivity
 
     EditText singname, singer;
 
-    CheckBox H_idol, H_band, H_trot, H_healing, H_calm, H_dreamlike, H_daybreak, H_depressed,
-             H_noisily, H_excited, H_walk, H_summer, H_powerful, H_strong, H_grand;
+    CheckBox H_idol;
+    CheckBox H_band;
+    CheckBox H_trot;
+    CheckBox H_healing;
+    CheckBox H_calm;
+    CheckBox H_dreamlike;
+    CheckBox H_daybreak;
+    CheckBox H_depressed;
+    CheckBox H_noisily;
+    CheckBox H_excited;
+    CheckBox H_walk;
+    CheckBox H_summer;
+    CheckBox H_powerful;
+    CheckBox H_strong;
+    CheckBox H_grand;
 
     RadioGroup Country;
-    RadioButton Korea, Japan, China, Rest;
+    RadioButton Korea;
+    RadioButton Japan;
+    RadioButton China;
+    RadioButton Rest;
 
-    RadioGroup OST;
-    RadioButton Ani, Drama, Movie;
+    RadioGroup Ost;
+    RadioButton Ani;
+    RadioButton Drama;
+    RadioButton Movie;
 
-    String name, sing;
-    String country;
-    String ost;
+    String name;
+    String sing;
+    String country1;
+    String ost1;
     String hesh[]={" ","  "," "};
 
     @Override
@@ -67,10 +87,10 @@ public class SearchActivity extends AppCompatActivity
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId)
             {
-                if(checkedId == R.id.Korea) {country= Korea.getText().toString();}
-                    else if(checkedId == R.id.Japan) {country= Japan.getText().toString();}
-                    else if(checkedId == R.id.China) {country= China.getText().toString();}
-                    else if(checkedId == R.id.Rest) {country= Rest.getText().toString();}
+                if(checkedId == R.id.Korea) {country1= Korea.getText().toString();}
+                    else if(checkedId == R.id.Japan) {country1= Japan.getText().toString();}
+                    else if(checkedId == R.id.China) {country1= China.getText().toString();}
+                    else if(checkedId == R.id.Rest) {country1= Rest.getText().toString();}
             }
         });
 
@@ -79,15 +99,15 @@ public class SearchActivity extends AppCompatActivity
         China=(RadioButton)findViewById(R.id.China);
         Rest=(RadioButton)findViewById(R.id.Rest);
 
-        OST=(RadioGroup)findViewById(R.id.OST);
-        OST.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+        Ost=(RadioGroup)findViewById(R.id.OST);
+        Ost.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
         {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId)
             {
-             if(checkedId == R.id.Ani) {ost= Ani.getText().toString();}
-             else if(checkedId == R.id.Drama) {ost= Drama.getText().toString();}
-             else if(checkedId == R.id.Movie) {ost= Movie.getText().toString();}
+             if(checkedId == R.id.Ani) {ost1= Ani.getText().toString();}
+             else if(checkedId == R.id.Drama) {ost1= Drama.getText().toString();}
+             else if(checkedId == R.id.Movie) {ost1= Movie.getText().toString();}
             }
         });
 
@@ -104,46 +124,46 @@ public class SearchActivity extends AppCompatActivity
 
                 for(int i=0;i<3;i++)
                 {
-                    if(H_idol.isChecked() == true &&hesh[i]==" ")
+                    if(H_idol.isChecked()==true  &&hesh[i].equals(" "))
                          {hesh[i]= H_idol.getText().toString();
                           H_idol.setChecked(false);}
-                    if(H_band.isChecked() == true &&hesh[i]==" ")
+                    if(H_band.isChecked() == true &&hesh[i].equals(" "))
                          {hesh[i]= H_band.getText().toString();
                           H_band.setChecked(false);}
-                    if(H_trot.isChecked() == true &&hesh[i]==" ")
+                    if(H_trot.isChecked() == true &&hesh[i].equals(" "))
                          {hesh[i]= H_trot.getText().toString();
                           H_trot.setChecked(false);}
-                    if(H_healing.isChecked() == true &&hesh[i]==" ")
+                    if(H_healing.isChecked() == true &&hesh[i].equals(" "))
                          {hesh[i]= H_healing.getText().toString();
                           H_healing.setChecked(false);}
-                    if(H_calm.isChecked() == true &&hesh[i]==" ")
+                    if(H_calm.isChecked() == true &&hesh[i].equals(" "))
                          {hesh[i]= H_calm.getText().toString();
                           H_calm.setChecked(false);}
-                    if(H_dreamlike.isChecked() == true &&hesh[i]==" ")
+                    if(H_dreamlike.isChecked() == true &&hesh[i].equals(" "))
                          {hesh[i]= H_dreamlike.getText().toString();
                           H_dreamlike.setChecked(false);}
-                    if(H_daybreak.isChecked() == true &&hesh[i]==" ")
+                    if(H_daybreak.isChecked() == true &&hesh[i].equals(" "))
                          {hesh[i]= H_daybreak.getText().toString();
                           H_daybreak.setChecked(false);}
-                    if(H_depressed.isChecked() == true &&hesh[i]==" ")
+                    if(H_depressed.isChecked() == true &&hesh[i].equals(" "))
                          {hesh[i]= H_depressed.getText().toString();
                           H_depressed.setChecked(false);}
-                    if(H_excited.isChecked() == true &&hesh[i]==" ")
+                    if(H_excited.isChecked() == true &&hesh[i].equals(" "))
                          {hesh[i]= H_excited.getText().toString();
                           H_excited.setChecked(false);}
-                    if(H_walk.isChecked() == true &&hesh[i]==" ")
+                    if(H_walk.isChecked() == true &&hesh[i].equals(" "))
                          {hesh[i]= H_walk.getText().toString();
                           H_walk.setChecked(false);}
-                    if(H_summer.isChecked() == true &&hesh[i]==" ")
+                    if(H_summer.isChecked() == true &&hesh[i].equals(" "))
                          {hesh[i]= H_summer.getText().toString();
                           H_summer.setChecked(false);}
-                    if(H_powerful.isChecked() == true &&hesh[i]==" ")
+                    if(H_powerful.isChecked() == true &&hesh[i].equals(" "))
                          {hesh[i]= H_powerful.getText().toString();
                           H_powerful.setChecked(false);}
-                    if(H_strong.isChecked() == true &&hesh[i]==" ")
+                    if(H_strong.isChecked() == true &&hesh[i].equals(" "))
                          {hesh[i]= H_strong.getText().toString();
                           H_strong.setChecked(false);}
-                    if(H_grand.isChecked() == true &&hesh[i]==" ")
+                    if(H_grand.isChecked() == true &&hesh[i].equals(" "))
                          {hesh[i]= H_grand.getText().toString();
                           H_grand.setChecked(false);}
                 }

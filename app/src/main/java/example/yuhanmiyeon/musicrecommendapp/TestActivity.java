@@ -11,12 +11,14 @@ import android.widget.TextView;
 
 public class TestActivity extends AppCompatActivity {
 
-    int i,j,count;
+    int i;
+    int j;
+    int count;
     int m=0;
-    public  int[] music={R.raw.music1,R.raw.music2,R.raw.music3,R.raw.music4};
-    public  int[] score=new int[10];
-    public MediaPlayer md;
-    public MediaPlayer md2;
+    private int[] music={R.raw.music1,R.raw.music2,R.raw.music3,R.raw.music4};
+    private   int[] score=new int[10];
+    private MediaPlayer md;
+    private MediaPlayer md2;
 
     TextView textView;
 
@@ -86,8 +88,9 @@ public class TestActivity extends AppCompatActivity {
                     public void onClick(View v) {
 
                         score[j-1]++;
-                        if(j==4){i++;}
-                        if(j==4){j=i+1;}
+                        if(j==4){i++;
+                            j=i+1;}
+
 
                         md=MediaPlayer.create(TestActivity.this,music[i]);
                         md2=MediaPlayer.create(TestActivity.this,music[j]);
