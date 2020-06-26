@@ -32,7 +32,8 @@ public class TestActivity extends AppCompatActivity {
         Button m1 = (Button) findViewById(R.id.m1);
         Button m2 = (Button) findViewById(R.id.m2);
 
-
+        md=MediaPlayer.create(TestActivity.this,music[3]);
+        md2=MediaPlayer.create(TestActivity.this,music[2]);
         textView=(TextView)findViewById(R.id.textV);
         j=i+1;
                 m1.setOnClickListener(new View.OnClickListener() {

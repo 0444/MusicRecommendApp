@@ -52,7 +52,7 @@ public class SearchActivity extends AppCompatActivity
     String sing;
     String country1;
     String ost1;
-    String hesh[]={" ","  "," "};
+    String hesh[]={" "," "," "};
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -148,6 +148,9 @@ public class SearchActivity extends AppCompatActivity
                     if(H_depressed.isChecked() == true &&hesh[i].equals(" "))
                          {hesh[i]= H_depressed.getText().toString();
                           H_depressed.setChecked(false);}
+                    if(H_noisily.isChecked() == true &&hesh[i].equals(" "))
+                    {hesh[i]= H_noisily.getText().toString();
+                        H_noisily.setChecked(false);}
                     if(H_excited.isChecked() == true &&hesh[i].equals(" "))
                          {hesh[i]= H_excited.getText().toString();
                           H_excited.setChecked(false);}
